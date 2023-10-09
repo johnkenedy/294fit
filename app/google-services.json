@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "919380968543",
+    "project_id": "infit-302e0",
+    "storage_bucket": "infit-302e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919380968543:android:ad432b3b8dcee4ef8887ea",
+        "android_client_info": {
+          "package_name": "com.example.gym2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0SfbVcgdTLg44KRm0c6GLwOi7R-_Cb1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919380968543:android:4111bf1fb15c2e758887ea",
+        "android_client_info": {
+          "package_name": "ken.projects.infit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0SfbVcgdTLg44KRm0c6GLwOi7R-_Cb1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

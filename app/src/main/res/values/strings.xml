@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Gym2</string>
+    <string name="beginner">Iniciante</string>
+    <string name="intermediate">Intermediário</string>
+    <string name="advanced">Avançado</string>
+
+    <string name="barbell">Barbell</string>
+    <string name="kettleBell">Kettle Bell</string>
+    <string name="bodyWeight">Body Weight</string>
+    <string name="resistanceBands">Resistance Bands</string>
+    <string name="machine">Machine</string>
+    <string name="smithMachine">Smith Machine</string>
+    <string name="rope">Rope</string>
+    <string name="cable">Cable</string>
+    <string name="dumbbells">Dumbbells</string>
+    <string name="equipment">equipment</string>
+</resources>
