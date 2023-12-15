@@ -7,5 +7,5 @@ data class Workout(
     val targetMuscleGroups: ArrayList<String>? = null,
     val duration: Int? = null,
     val dayOfWeek: DayOfWeek? = null,
-    val exerciseItem: ArrayList<ExerciseItem>? = null
+    val exerciseItems: ArrayList<ExerciseItem>? = null
 )
