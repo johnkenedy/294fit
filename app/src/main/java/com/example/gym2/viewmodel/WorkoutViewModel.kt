@@ -10,8 +10,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.toMutableStateList
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.gym2.data.models.Equipment
 import com.example.gym2.data.models.Exercise
 import com.example.gym2.data.models.ExerciseHistoryItem
+import com.example.gym2.data.models.ExerciseItem
 import com.example.gym2.data.models.ExerciseVolume
 import com.example.gym2.data.models.Muscle
 import com.example.gym2.data.models.User
@@ -383,4 +385,73 @@ class WorkoutViewModel @Inject constructor(
             }
         }
     }
+
+    fun addExerciseToWorkout(exerciseName: String, equipments: Equipment, sets: Int) =
+
+        viewModelScope.launch {
+            val exerciseItems: ArrayList<ExerciseItem> = ArrayList()
+            val volume: ArrayList<ExerciseVolume> = ArrayList()
+
+            for (i in 1..sets) {
+                volume.add(ExerciseVolume(set = i))
+            }
+
+            val exerciseItem = ExerciseItem(
+                exercise = userExercisesList.first { it.name == exerciseName },
+                name = exerciseName,
+                equipments = equipments,
+                sets = sets,
+                volume = volume
+            )
+
+            workoutState.exerciseItems?.let {
+                exerciseItems.addAll(it)
+            }
+
+            val workout = Workout(
+                name = workoutState.name,
+                targetMuscleGroups = workoutState.targetMuscleGroups,
+                duration = workoutState.duration,
+                dayOfWeek = workoutState.dayOfWeek,
+                exerciseItems = exerciseItems
+            )
+
+            repository.updateWorkout(workout = workout, workoutId = workoutId, uid = userId)
+
+        }
+
+    fun removeExercise(exerciseItem: ExerciseItem) = viewModelScope.launch {
+
+        val exercises = workoutState.exerciseItems?.minus(exerciseItem)
+
+        val workout = Workout(
+            name = workoutState.name,
+            targetMuscleGroups = workoutState.targetMuscleGroups,
+            duration = workoutState.duration,
+            dayOfWeek = workoutState.dayOfWeek,
+            exerciseItems = exercises as ArrayList<ExerciseItem>?
+        )
+
+        repository.updateWorkout(workoutId = workoutId, workout = workout, uid = userId)
+
+    }
+
+    fun addNewExercise(exercise: Exercise) = viewModelScope.launch {
+
+        repository.addNewExercise(exercise, userId)
+
+    }
+
+    // DELETE DATA
+
+    fun deleteWorkoutPlan() {
+        viewModelScope.launch {
+            repository.deleteWorkoutPlan(workoutPlanState.workoutPlan?.name!!, userId)
+
+            workoutPlanState = workoutPlanState.copy(
+                workoutPlan = null
+            )
+        }
+    }
+
 }
