@@ -30,6 +30,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.gym2.R
+import com.example.gym2.ui.composables.home.Heading
+import com.example.gym2.ui.composables.home.SubHeading
 import com.example.gym2.ui.navigation.Screens
 import com.example.gym2.ui.theme.holoGreen
 import com.example.gym2.ui.theme.white
