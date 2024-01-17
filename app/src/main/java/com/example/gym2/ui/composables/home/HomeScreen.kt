@@ -45,6 +45,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.gym2.R
 import com.example.gym2.ui.composables.CalendarDisplay
+import com.example.gym2.ui.composables.CommandsDisplay
 import com.example.gym2.ui.composables.RegularButton
 import com.example.gym2.ui.navigation.Screens
 import com.example.gym2.ui.theme.darkBlue
