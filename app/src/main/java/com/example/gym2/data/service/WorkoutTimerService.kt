@@ -9,9 +9,11 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.example.gym2.R
 import com.example.gym2.util.getTimeStringFromDouble
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Timer
 import java.util.TimerTask
 
+@AndroidEntryPoint
 class WorkoutTimerService: Service() {
 
     override fun onBind(intent: Intent?): IBinder? = null

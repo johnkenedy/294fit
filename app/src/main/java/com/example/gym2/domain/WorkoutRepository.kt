@@ -24,6 +24,7 @@ interface WorkoutRepository {
     suspend fun getWorkouts(uid: String): Resource<QuerySnapshot>
     suspend fun getExercises(uid: String): MutableLiveData<Resource<QuerySnapshot>>
     suspend fun getUser(uid: String): Resource<DocumentSnapshot>
+    suspend fun addExerciseToWorkout(exerciseItem: ExerciseItem, workoutId: String, uid: String): Resource<Void>
     suspend fun addNewExercise(exercise: Exercise, uid: String): Resource<Void>
     suspend fun addExerciseHistory(exercise: ExerciseHistoryItem, uid: String)
     suspend fun updateWorkout(

@@ -39,6 +39,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import androidx.navigation.NavHostController
 import com.example.gym2.R
 import com.example.gym2.data.models.Exercise
 import com.example.gym2.data.models.equipments
@@ -55,6 +56,8 @@ import com.example.gym2.viewmodel.WorkoutViewModel
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ExerciseDetailScreen(
+    modifier: Modifier = Modifier,
+    navController: NavHostController,
     workoutViewModel: WorkoutViewModel
 ) = with(workoutViewModel) {
 

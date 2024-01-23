@@ -36,7 +36,7 @@ import com.example.gym2.viewmodel.WorkoutViewModel
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ExerciseItemDisplay(
+fun ExerciseItemsDisplay(
     modifier: Modifier = Modifier,
     workoutViewModel: WorkoutViewModel
 ) {

@@ -1,6 +1,7 @@
 package com.example.gym2.ui.navigation
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
@@ -10,6 +11,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.gym2.ui.theme.darkBlue
 import com.example.gym2.viewmodel.UserViewModel
@@ -43,6 +45,28 @@ fun RootNavGraph(
         },
         backgroundColor = darkBlue
     ) {
+
+        NavHost(
+            navController = navController,
+            startDestination = LOGIN_ROUTE,
+            route = ROOT_ROUTE,
+            modifier = Modifier.padding(it)
+        ) {
+            loginNavGraph(
+                navController = navController,
+                bottomBarState,
+                userViewModel,
+                scaffoldState
+            )
+
+            mainNavGraph(
+                navController = navController,
+                bottomBarState,
+                userViewModel,
+                workoutViewModel,
+                scaffoldState
+            )
+        }
 
     }
 

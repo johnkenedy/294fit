@@ -28,8 +28,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
+import com.example.gym2.ui.composables.exercises.ExerciseDetailScreen
+import com.example.gym2.ui.composables.exercises.ExercisesScreen
 import com.example.gym2.ui.composables.home.HomeScreen
+import com.example.gym2.ui.composables.profile.ProfileScreen
+import com.example.gym2.ui.composables.stats.StatsDetailScreen
 import com.example.gym2.ui.composables.stats.StatsScreen
+import com.example.gym2.ui.composables.workout.WorkoutDetailScreen
+import com.example.gym2.ui.composables.workout.WorkoutPlanSetUpScreen
+import com.example.gym2.ui.composables.workout.WorkoutScreen
 import com.example.gym2.ui.theme.holoGreen
 import com.example.gym2.ui.theme.veryDarkBlue
 import com.example.gym2.viewmodel.UserViewModel
@@ -51,6 +58,42 @@ fun NavGraphBuilder.mainNavGraph(
 
         composable(route = Screens.Stats.route) {
             StatsScreen(navController, workoutViewModel)
+            bottomBarState.value = true
+        }
+
+        composable(route = Screens.Profile.route) {
+            // TODO: PROFILE SCREEN
+            ProfileScreen()
+            bottomBarState.value = true
+        }
+
+        composable(route = Screens.StatsDetails.route) {
+            StatsDetailScreen(navController, workoutViewModel)
+            bottomBarState.value = true
+        }
+
+        composable(route = Screens.WorkoutDetails.route) {
+            WorkoutDetailScreen(navController, workoutViewModel)
+            bottomBarState.value = true
+        }
+
+        composable(route = Screens.Workout.route) {
+            WorkoutScreen(workoutViewModel, navController)
+            bottomBarState.value = true
+        }
+
+        composable(route = Screens.Exercises.route) {
+            ExercisesScreen(navController, workoutViewModel)
+            bottomBarState.value = true
+        }
+
+        composable(route = Screens.ExerciseDetails.route) {
+            ExerciseDetailScreen(Modifier, navController, workoutViewModel)
+            bottomBarState.value = true
+        }
+
+        composable(route = Screens.WorkoutPlanSetUp.route) {
+            WorkoutPlanSetUpScreen(workoutViewModel = workoutViewModel, navController = navController)
             bottomBarState.value = true
         }
 

@@ -20,11 +20,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.gym2.data.service.WorkoutTimerService
 import com.example.gym2.ui.navigation.RootNavGraph
+import com.example.gym2.ui.navigation.Screens
 import com.example.gym2.ui.theme.Gym2Theme
 import com.example.gym2.util.getTimeStringFromDouble
 import com.example.gym2.viewmodel.UserViewModel
 import com.example.gym2.viewmodel.WorkoutViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     lateinit var navController: NavHostController
