@@ -60,7 +60,7 @@ fun StatsScreen(
         ) {
             Heading(text = stringResource(id = R.string.your_stats))
             LazyColumn(modifier = Modifier.padding(end = 40.dp, top = 25.dp).fillMaxHeight()) {
-                items(statsExercises.toList()) { exercise ->
+                items(statsExercises.toMutableList().toList()) { exercise ->
                     StatsItem(exercise) {
                         navController.navigate(Screens.StatsDetails.route)
                         workoutViewModel.currentExerciseId = exercise
@@ -78,7 +78,7 @@ fun StatsScreen(
 fun StatsItem(exercise: String, onClick: () -> Unit) {
     Row(
        horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier.fillMaxWidth().clickable { onClick },
+        modifier = Modifier.fillMaxWidth().clickable { onClick() },
         verticalAlignment = Alignment.CenterVertically
     ) {
         SubHeading(text = exercise, color = white)

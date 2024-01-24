@@ -1,7 +1,6 @@
 package com.example.gym2.ui.composables.workout
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -150,7 +149,7 @@ fun WorkoutPlanSetUpScreen(
                 if (workoutPlanName.isNotEmpty() && selectedDays.isNotEmpty()) {
                     val workoutPlan = WorkoutPlan(
                         name = workoutPlanName,
-                        workouts = selectedDays.toList() as ArrayList<DayOfWeek>,
+                        workouts = selectedDays.toMutableList().toList() as ArrayList<DayOfWeek>,
                         difficulty = selectedDifficulty,
                         duration = duration
                     )

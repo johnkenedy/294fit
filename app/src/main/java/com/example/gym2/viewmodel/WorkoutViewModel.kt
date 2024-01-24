@@ -27,7 +27,7 @@ import com.example.gym2.util.DifficultyLevels
 import com.example.gym2.util.DifficultyLevels.Companion.Beginner
 import com.example.gym2.util.Resource
 import com.example.gym2.util.getTimeStringFromDouble
-import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.firestore.toObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.time.DayOfWeek
@@ -407,6 +407,8 @@ class WorkoutViewModel @Inject constructor(
             workoutState.exerciseItems?.let {
                 exerciseItems.addAll(it)
             }
+
+            exerciseItems.add(exerciseItem)
 
             val workout = Workout(
                 name = workoutState.name,

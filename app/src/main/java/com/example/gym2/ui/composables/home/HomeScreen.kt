@@ -73,7 +73,7 @@ fun HomeScreen(
     val state = workoutPlanState
     val date = workoutDay
     val selectedDay = calendarSelection
-    var openDialog by remember { mutableStateOf(true) }
+    var openDialog by remember { mutableStateOf(false) }
     var openLogOutDialog by remember { mutableStateOf(false) }
 
     BackHandler(true) {
@@ -132,7 +132,7 @@ fun HomeScreen(
 
                             RegularButton(text = stringResource(id = R.string.confirm), onClick = {
                                 deleteWorkoutPlan()
-                                openDialog
+                                openDialog = false
                             })
 
                             RegularButton(text = stringResource(id = R.string.dismiss), onClick = {

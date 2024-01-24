@@ -70,7 +70,7 @@ fun ExerciseDetailScreen(
 
     LaunchedEffect(key1 = openDialog, block = { getExercises() })
 
-    val equipments = equipments.toSet().toList()
+    val equipments = equipments().toSet().toList()
     var selectedEquipment by remember { mutableStateOf(equipments[0]) }
     var eqBoxExpanded by remember { mutableStateOf(false) }
 
